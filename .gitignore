@@ -1,0 +1,7 @@
+node_modules/**/*
+npm-debug.*
+.cache/**/*
+dist/**/*
+
+# macOS
+.DS_Store
