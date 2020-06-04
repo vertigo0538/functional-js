@@ -1,4 +1,4 @@
-import { profile } from "./data";
+import { profile } from "../data";
 import mockAxios from "axios";
 describe("Data test", () => {
   mockAxios.get.mockImplementationOnce(() =>

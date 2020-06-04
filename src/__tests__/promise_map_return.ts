@@ -1,13 +1,12 @@
 // import { map } from "./utils/fx";
 import { from } from "rxjs";
 import { mergeAll, toArray } from "rxjs/operators";
-import { map } from "./utils/fxjs";
-import { async } from "rxjs/internal/scheduler/async";
+import { map } from "../utils/fxjs";
 
 describe("Promise array return", () => {
   // https://fireship.io/snippets/testing-rxjs-observables-with-jest/
   it("Rxjs-1", (done) => {
-    function delayI(a) {
+    function delayI(a: any) {
       return new Promise((resolve) => setTimeout(() => resolve(a), 100));
     }
     const list = [1, 2, 3, 4];
@@ -21,7 +20,7 @@ describe("Promise array return", () => {
     });
   });
   it("Rxjs-2", (done) => {
-    function delayI(a) {
+    function delayI(a: any) {
       return new Promise((resolve) => setTimeout(() => resolve(a), 100));
     }
     const list = [1, 2, 3, 4];
@@ -38,11 +37,11 @@ describe("Promise array return", () => {
     });
   });
   it("Fxjs", async () => {
-    function delayI(a) {
+    function delayI(a: any) {
       return new Promise((resolve) => setTimeout(() => resolve(a), 100));
     }
     const list = [1, 2, 3, 4];
-    const res = await map((a) => delayI(a * a), list);
+    const res = await map((a: any) => delayI(a * a), list);
     expect.assertions(1);
     expect(res).toStrictEqual([1, 4, 9, 16]);
   });
@@ -51,7 +50,7 @@ describe("Promise array return", () => {
       return new Promise((resolve) => setTimeout(() => resolve(a), 100));
     }
     const list = [1, 2, 3, 4];
-    const res = await map((a) => delayI(a * a), list);
+    const res = await map((a: any) => delayI(a * a), list);
     expect.assertions(1);
     return Promise.all(res).then((results) => {
       expect(results).toStrictEqual([1, 4, 9, 16]);
