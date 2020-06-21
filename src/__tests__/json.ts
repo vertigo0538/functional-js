@@ -6,10 +6,8 @@ describe("json method test", () => {
       age: 26,
     };
     const jsonUser = JSON.stringify(user);
-    expect(jsonUser).toMatchObject({
-      name: "khk",
-      age: 26,
-    });
+    console.log(jsonUser);
+    expect(jsonUser).toBeString(`{"name":"khk","age":26}`);
   });
   it("parse json=>object", () => {
     const user = {
@@ -28,8 +26,7 @@ describe("json method test", () => {
       name: "khk",
       age: 26,
     };
-
     const jsonUser = JSON.stringify(user, ["name"]);
-    expect(jsonUser).toBe("khk");
+    expect(jsonUser).toBeString("khk");
   });
 });
