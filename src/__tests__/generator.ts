@@ -1,5 +1,6 @@
 import { odd, evenOdd } from "../generator";
-
+import _ from "lodash";
+import { iterable2 } from "../iterable";
 describe("함수형 프로그래밍 제너레이터", () => {
   it("generator basic ", () => {
     function* gen() {
@@ -79,5 +80,37 @@ describe("함수형 프로그래밍 제너레이터", () => {
     for (const a of oddResult) {
       console.log(a);
     }
+  });
+  it("lodash map iterator", () => {
+    function* gen() {
+      yield 2;
+      yield 4;
+      yield 6;
+    }
+    const map = (f, iter) => {
+      let res = [];
+      for (const p of iter) {
+        res.push(f(p));
+      }
+      return res;
+    };
+    const test = [...gen()];
+    const result = _.map(gen(), (a) => a * a);
+    console.log(result);
+  });
+  it("Symbol.iterator", () => {
+    let m = new Map();
+    m.set("a", 10);
+    m.set("b", 20);
+    const it = m[Symbol.iterator]();
+    console.log(it.next());
+  });
+  it("enties", () => {
+    const arr = [1, 4, 6];
+    let m = new Map();
+    m.set("a", 10);
+    m.set("b", 20);
+    const enties = m.entries();
+    console.log(enties.next());
   });
 });
