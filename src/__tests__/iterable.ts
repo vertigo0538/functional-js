@@ -10,12 +10,12 @@ describe("Test custom iterble function", () => {
     expect(iterator.next().done).toBeTrue();
   });
 
-  test("Custom한 iterable1을 순회 시키면 실패한다", () => {
-    const customIterator = iterable[Symbol.iterator]();
-    for (const a of customIterator) {
-      expect(a).toError();
-    }
-  });
+  // test("Custom한 iterable1을 순회 시키면 실패한다", () => {
+  //   const customIterator = iterable[Symbol.iterator]();
+  //   for (const a of customIterator) {
+  //     expect(a).toError();
+  //   }
+  // });
   test("자기 자신을 return 하게 만드는 [Symbol.iterator]를 추가하면 순회를 할 수 있다.", () => {
     const customIterator = iterable2[Symbol.iterator]();
     for (const a of customIterator) {
