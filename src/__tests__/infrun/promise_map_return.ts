@@ -1,7 +1,7 @@
 // import { map } from "./utils/fx";
 import { from } from "rxjs";
 import { mergeAll, toArray } from "rxjs/operators";
-import { map } from "../utils/fxjs";
+import { map } from "../../utils/fxjs";
 
 describe("Promise array return", () => {
   // https://fireship.io/snippets/testing-rxjs-observables-with-jest/

@@ -1,5 +1,5 @@
 // import { map, filter, reduce } from "./utils/fx";
-import { products } from "./utils/data";
+import { products } from "../utils/data";
 // import { map } from "./utils/fxjs";
 import { from } from "rxjs";
 import { map, mergeAll, toArray, filter } from "rxjs/operators";

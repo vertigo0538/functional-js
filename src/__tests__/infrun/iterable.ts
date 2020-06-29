@@ -1,5 +1,5 @@
-import { iterable } from "../iterable";
-import { iterable2 } from "../iterable";
+import { iterable } from "../../infrun/iterable";
+import { iterable2 } from "../../infrun/iterable";
 
 describe("Test custom iterble function", () => {
   test("iterable custom1", () => {

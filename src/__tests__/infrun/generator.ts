@@ -1,6 +1,6 @@
-import { odd, evenOdd } from "../generator";
+import { odd, evenOdd } from "../../infrun/generator";
 import _ from "lodash";
-import { iterable2 } from "../iterable";
+import { iterable2 } from "../../infrun/iterable";
 describe("함수형 프로그래밍 제너레이터", () => {
   it("generator basic ", () => {
     function* gen() {
