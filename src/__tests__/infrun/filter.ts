@@ -53,4 +53,14 @@ describe("filter", () => {
     // expect(result2).toHaveLength(2);
     expect(result3).toHaveLength(1);
   });
+  it("pure", () => {
+    const result = (function* () {
+      yield 1;
+      yield 2;
+      yield 3;
+      yield 4;
+      yield 5;
+    })().filter((n) => n % 2);
+    expect(result).toBe(4);
+  });
 });
