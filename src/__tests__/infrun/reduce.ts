@@ -33,8 +33,8 @@ describe("reduce1 배열안에 전부 더하기", () => {
       return a + b;
     };
     const totalPrice = (total_price, product) => {
-      // console.log(total_price);
-      console.log(product);
+      console.log(total_price);
+      // console.log(product);
       return total_price + product.price;
     };
     // expect(add(add(add(add(add(0, 1), 2), 3), 4), 5)).toBe(15);
