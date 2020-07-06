@@ -22,3 +22,10 @@ export const reduce = (f, acc, iter) => {
   }
   return acc;
 };
+export const go = (...args) => reduce((a, f) => f(a), args);
+
+export const pipe = (f, ...functions) => {
+  return function (...a) {
+    return go(f(...a), ...functions);
+  };
+};

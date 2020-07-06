@@ -39,7 +39,7 @@ describe("reduce1 배열안에 전부 더하기", () => {
     };
     // expect(add(add(add(add(add(0, 1), 2), 3), 4), 5)).toBe(15);
 
-    const result = reduce(add, [1, 2, 3, 4, 5]);
+    const result = reduce(add, _, [1, 2, 3, 4, 5]);
     expect(result).toBe(15);
 
     const result2 = reduce(
