@@ -43,6 +43,6 @@ describe("go를 사용하여 읽기 좋은 코드로 만들기", () => {
       (products) => map((p) => p.price, products),
       (prices) => reduce(add, prices)
     );
-    expect(result).toBe(23000);
+    expect(result).toBe(115000);
   });
 });
