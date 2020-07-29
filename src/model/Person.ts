@@ -3,26 +3,19 @@
  * 이 책의 학습용 예제를 위한 도메인 모델 객체
  * 저자: 루이스 아텐시오
  */
-// interface PersonClass {
-//   ssn: string;
-//   firstname: string;
-//   lastname: string;
-//   birthYear: string;
-//   address: string;
-// }
 
 class Person {
   _ssn: string;
   _firstname: string;
   _lastname: string;
-  _birthYear: string | null;
-  _address: string | null;
+  _birthYear: number | null;
+  _address: object | null;
   constructor(
     ssn: string,
     firstname: string,
     lastname: string,
-    birthYear: string | null,
-    address: string | null
+    birthYear: number | null = null,
+    address: object | null = null
   ) {
     this._ssn = ssn;
     this._firstname = firstname;
@@ -31,32 +24,31 @@ class Person {
     this._address = address;
   }
 
-  get ssn() {
+  get ssn(): string {
     return this._ssn;
   }
 
-  get firstname() {
+  get firstname(): string {
     return this._firstname;
   }
 
-  set firstname(firstname) {
+  set firstname(firstname: string) {
     this._firstname = firstname;
-    return this;
   }
 
-  get lastname() {
+  get lastname(): string {
     return this._lastname;
   }
 
-  get birthYear() {
+  get birthYear(): number | null {
     return this._birthYear;
   }
 
-  get address() {
+  get address(): object | null {
     return this._address;
   }
 
-  get fullname() {
+  get fullname(): string {
     return `${this._firstname} ${this._lastname}`;
   }
 }

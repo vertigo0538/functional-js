@@ -1,4 +1,4 @@
-export interface zipCode {
+interface zipCode {
   code(): string;
   location(): string;
   fromString(str: string): void;
