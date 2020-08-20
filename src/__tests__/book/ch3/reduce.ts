@@ -7,7 +7,7 @@ import R, { groupBy } from "ramda";
 import _ from "lodash";
 describe("", () => {
   const persons = [p1, p2, p3, p4];
-  // console.log(persons);
+  console.log(persons);
   it("rodash reduce", () => {
     const average = (stat: any, person: any) => {
       const country = person.address.country;
@@ -51,6 +51,7 @@ describe("", () => {
   it("ramda reduce2", () => {
     const getCountry = (person) => person.address.country;
     const average = (stat: any, criteria: any) => {
+      console.log("stat", stat);
       stat[criteria] = R.isNil(stat[criteria]) ? 1 : stat[criteria] + 1;
       return stat;
     };

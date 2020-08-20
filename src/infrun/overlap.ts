@@ -1,3 +1,4 @@
+export const L = {};
 export const curry = (f) => (a, ..._) =>
   _.length ? f(a, ..._) : (..._) => f(a, ..._);
 
@@ -57,3 +58,31 @@ export const go = (...args) => reduce((a, f) => f(a), args);
 //   };
 // };
 export const pipe = (f, ...functions) => (...a) => go(f(...a), ...functions);
+
+export const range = (l) => {
+  const result = [];
+  let i = -1;
+  while (++i < l) {
+    result.push(i);
+  }
+  return result;
+};
+L.range = function* (l) {
+  let i = -1;
+  while (++i < l) {
+    yield i;
+  }
+};
+
+export const take = (l, iter) => {
+  const result = [];
+  for (const a of iter) {
+    result.push(a);
+    if (result.length == l) return result;
+  }
+};
+export const test = (name, time, f) => {
+  console.time(name);
+  while (time--) f();
+  console.timeEnd(name);
+};
