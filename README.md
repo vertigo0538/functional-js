@@ -1,3 +1,3 @@
 # functional js
 
-## jest, parcel, lodash, RxJs
+## jest, parcel, ramda, lodash, RxJs
